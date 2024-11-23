@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: gp2-persistent
+provisioner: kubernetes.io/aws-ebs
+reclaimPolicy: Retain
+parameters:
+  type: gp2 #gp2 외에도 여러가지 타입이 있음.
+  fsType: ext4
+volumeBindingMode: WaitForFirstConsumer
